@@ -1,6 +1,7 @@
 package com.aurora.crms.domain;
 
 public class Student {
+	
 	private String fIrstName;
 	private String lastName;
 	private String sex;

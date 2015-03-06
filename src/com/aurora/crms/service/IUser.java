@@ -1,5 +1,5 @@
 package com.aurora.crms.service;
 
-public interface IStudentService {
+public interface IUser {
 
 }

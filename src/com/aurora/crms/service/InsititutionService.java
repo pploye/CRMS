@@ -1,5 +1,8 @@
 package com.aurora.crms.service;
 
-public class InsititutionService {
+import org.springframework.stereotype.Service;
+
+@Service
+public class InsititutionService implements IInstitution {
 
 }

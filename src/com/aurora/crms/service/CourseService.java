@@ -1,5 +1,8 @@
 package com.aurora.crms.service;
 
-public class CourseService {
+import org.springframework.stereotype.Service;
+
+@Service
+public class CourseService implements ICourse {
 
 }

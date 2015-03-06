@@ -1,5 +1,8 @@
 package com.aurora.crms.service;
 
-public class DepartmentService {
+import org.springframework.stereotype.Service;
+
+@Service
+public class DepartmentService implements IDepartment{
 
 }

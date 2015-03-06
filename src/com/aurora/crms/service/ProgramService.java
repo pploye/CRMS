@@ -1,5 +1,8 @@
 package com.aurora.crms.service;
 
-public class ProgramService {
+import org.springframework.stereotype.Service;
+
+@Service
+public class ProgramService implements IProgram {
 
 }

@@ -1,5 +1,5 @@
 package com.aurora.crms.repository;
 
-public interface IUserRepository {
+public interface IUser {
 
 }

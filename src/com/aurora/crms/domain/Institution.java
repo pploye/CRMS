@@ -2,6 +2,7 @@ package com.aurora.crms.domain;
 
 public class Institution {
 
+	private String institutionName;
 	private String institutionCode;
 
 	public String getInstitutionCode() {
@@ -20,5 +21,5 @@ public class Institution {
 		this.institutionName = institutionName;
 	}
 
-	private String institutionName;
+	
 }

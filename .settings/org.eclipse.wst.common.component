@@ -2,6 +2,7 @@
     <wb-module deploy-name="CRMS">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/messages"/>
         <property name="context-root" value="CRMS"/>
         <property name="java-output-path" value="/CRMS/build/classes"/>
     </wb-module>

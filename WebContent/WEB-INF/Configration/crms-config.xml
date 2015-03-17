@@ -21,10 +21,6 @@
         <property name="prefix" value="/Views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-     
-  <!--   <bean id="messageSource" class="org.springframework.context.support.ReourceBundleMessageSource">
-    <property name="basename" value="messages"/>
-    </bean> -->
     
     <bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
@@ -35,13 +31,7 @@
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="language"></bean>
 	</mvc:interceptors>
 
-
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" p:defaultLocale="en"/>
-<!-- ///////// -->
-	<!-- <bean id="validator"
-		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-		<property name="validationMessageSource" ref="messageSource" />
-	</bean> -->
     
     
 </beans>

@@ -15,12 +15,12 @@ public class Course {
 	private String description;
 	private Date startDate;
 	private Date endDate;
-	
+
 	@OneToMany()
 	private List<Program> programs;
 
 	public int getCourseId() {
-		
+
 		return courseId;
 	}
 
@@ -59,6 +59,5 @@ public class Course {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-
 
 }

@@ -30,8 +30,9 @@ public class Student {
 	private String sFirstName;
 	@Size(min=3, max=30)
 	private String sLastName;
+	@Size(min=1)
 	private String gender;
-	@Past
+	@Past @NotNull
 	private Date dateOfBirth;
 	@ManyToOne@JoinColumn(name="PROGRAM_ID")
 	private Program program;

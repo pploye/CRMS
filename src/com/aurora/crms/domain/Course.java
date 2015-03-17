@@ -11,15 +11,27 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity(name = "Course")
 public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int courseId;
+	
+	@NotNull
+	@Size(min=3, max=30) 
 	private String name;
+	
+
 	private String description;
+	
+	@Future
 	private Date startDate;
+	
+	@Future
 	private Date endDate;
 
 	@ManyToMany()

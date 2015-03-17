@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity(name = "Address")
 public class Address {
@@ -13,9 +16,14 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	@NotNull
 	private String street;
+	@NotNull
 	private String city;
+	@Size(min=2, max=2, message="Size.Address.state")
 	private String state;
+	
+	@Pattern(regexp="^\\d{5}(-\\d{4})?$",message="{Pattern.zipcode}")
 	private String zipCode;
 	
 	@ManyToOne

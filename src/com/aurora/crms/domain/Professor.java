@@ -3,16 +3,26 @@ package com.aurora.crms.domain;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.Size;
 
 public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+	@Size(min=3, max=30) 
 	private String firstName;
+	@Size(min=3, max=30) 
 	private String lastName;
+	@Size(min=1)
 	private String gender;
+	@Size(min=3, max=100) 
 	private String educationLevel;
+	
+	@ManyToOne 
+	@JoinColumn(name="DEPT_ID")
+	private Department department;
 	
 	public int getId() {
 		return id;

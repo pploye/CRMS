@@ -57,8 +57,8 @@
 		</form>
 	</section>
 	<footer>
-		<p>&copy; 2015 - 2017 Aurora Inc.</p>
-		<a href="terms">Term</a> <a href="privacy">Privacy</a> <a href="security">Security</a> <a href="contact">Contact</a>
+		<a href="terms">Term</a> | <a href="privacy">Privacy</a> | <a href="security">Security</a> | <a href="contact">Contact</a>
+		<p>&copy; 2015 - 2017 Aurora Inc. All rights reserved.</p>
 	</footer>
 </body>
 </html>

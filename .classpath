@@ -17,5 +17,17 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
+=======
+	<classpathentry kind="lib" path="C:/Users/Sahar/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="dom4j"/>
+			<attribute name="maven.artifactId" value="dom4j"/>
+			<attribute name="maven.version" value="1.6.1"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+>>>>>>> e9fc6da88d7a696c3830da7d866739fcccd31f60
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

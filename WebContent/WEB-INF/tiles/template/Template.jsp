@@ -11,9 +11,11 @@
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript" src="<spring:url value="/Resources/Scripts/Script.js"/>"></script>
-	<title>Aurora (CRMS) Course Registration System</title>
+	<title><tiles:insertAttribute name="title"/></title>
 </head>
 <body>
-
+	<tiles:insertAttribute name="header"/>
+	<tiles:insertAttribute name="content"/>
+	<tiles:insertAttribute name="footer"/>
 </body>
 </html>

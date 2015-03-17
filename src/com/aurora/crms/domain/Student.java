@@ -1,21 +1,50 @@
 package com.aurora.crms.domain;
 
+import java.util.Date;
+import java.util.List;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-
-
 public class Student {
+	
+	
 	@NotEmpty
 	private String sId;
-	@Size(min=3, max=30, message="{Size.Student.sFirstName}")
+	@NotNull
+	@Size(min=3, max=30, message="Your first name should be between {min} and {max} characters")
+	@Pattern(regexp="[^0-9]*", message="Should not include digits")
 	private String sFirstName;
-	@Size(min=3, max=30, message="{Size.Student.sLastName}")
+	@Size(min=3, max=30)
 	private String sLastName;
 	private String gender;
-	private String dateOfBirth;
+	@Past
+	private Date dateOfBirth;
 	
+	private Address address;
+	
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	private List <Course> registeredCourses;
+	
+	public List<Course> getRegisteredCourses() {
+		return registeredCourses;
+	}
+
+	public void setRegisteredCourses(List<Course> registeredCourses) {
+		this.registeredCourses = registeredCourses;
+	}
+
 	public String getsId() {
 		return sId;
 	}
@@ -45,12 +74,15 @@ public class Student {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getDateOfBirth() {
+
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
-	public void setDateOfBirth(String dateOfBirth) {
+
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
+	
 	
 	
 

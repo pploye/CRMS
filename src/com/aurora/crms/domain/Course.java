@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Course {
@@ -15,6 +16,7 @@ public class Course {
 	private Date startDate;
 	private Date endDate;
 	
+	@OneToMany()
 	private List<Program> programs;
 
 	public int getCourseId() {

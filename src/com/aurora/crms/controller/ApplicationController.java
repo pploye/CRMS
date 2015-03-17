@@ -17,7 +17,7 @@ public class ApplicationController {
 	
 	@RequestMapping(value = {"/template"}, method = RequestMethod.GET)
 	public String template(){
-		return "Template";
+		return "template";
 	}
 	
 }

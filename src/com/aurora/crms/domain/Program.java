@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Program {
 	
@@ -17,7 +19,10 @@ public class Program {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
+	@NotEmpty(message="Enter the Program name")
 	private String name;
+	
+	@NotEmpty(message="Enter the Program Descriptions")
 	private String description;
 	
 	@ManyToMany()

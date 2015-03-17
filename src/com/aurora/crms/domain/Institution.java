@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -18,8 +19,12 @@ public class Institution {
 	@NotEmpty(message="Enter the Institution name")
 	private String Name;
 	
+	@NotNull
 	private Date dateEstablished;
+	
+	@NotEmpty(message="Enter the Owner's name")
 	private String Owner;
+	
 	private String Vision;
 	
 	@OneToMany(mappedBy ="institute")

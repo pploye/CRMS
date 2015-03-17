@@ -6,6 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Address {
@@ -13,6 +17,7 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	
 	private String street;
 	private String city;
 	private String state;

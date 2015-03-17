@@ -5,16 +5,23 @@ import java.util.Date;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 public class AccademicYear {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	
+	@NotNull(message = "{AccademicYear.name}")
 	private String name;
+	
+	@NotNull(message = "{AccademicYear.description}")
 	private String description;
+	
+	@NotNull
 	private Date startDate;
+	
+	@NotNull
 	private Date endDate;
 	
 	public int getId() {

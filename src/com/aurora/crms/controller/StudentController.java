@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.aurora.crms.domain.Student;
 
 @Controller
+@RequestMapping("/student")
 public class StudentController {
 	
 	@RequestMapping(value={"s_profile"}, method = RequestMethod.GET)

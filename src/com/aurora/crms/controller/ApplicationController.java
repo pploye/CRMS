@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes("User")
+@SessionAttributes({"User","University"})
 public class ApplicationController {
 	
 	@RequestMapping("/")

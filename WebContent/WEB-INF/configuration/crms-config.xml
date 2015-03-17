@@ -39,16 +39,12 @@
 	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">
             <list>
-                <value>/WEB-INF/tiles/Definition/tile.xml</value>
+                <value>/WEB-INF/tiles/definition/tile.xml</value>
             </list>
         </property>
 	</bean>
     
     <!-- These bean configuration are for internalization -->
-    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basename" value="classpath:messages" />
-	</bean>
-	
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="language"></bean>
 	</mvc:interceptors>

@@ -11,6 +11,7 @@ public class Department {
 	@OneToMany(mappedBy="department")
 	private List <Student> students;
 	
+	
 	public List<Student> getStudents() {
 		return students;
 	}

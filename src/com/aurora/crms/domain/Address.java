@@ -7,7 +7,7 @@ public class Address {
 	private String addressCode;
 	
 	@ManyToOne
-	@JoinColumn(name="STUDID")
+	@JoinColumn(name="STUDENTID")
 	private Student student;
 
 	public String getAddressCode() {

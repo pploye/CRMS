@@ -14,35 +14,41 @@
 <body>
 	<header>
 		<div id="logoArea">
-			<img src="<c:url value="/Resources/Images/icon.png" />" alt="logo"/>
+			<h1>Aurora</h1>
 		</div>
 		<div id="menuArea">
-			<a href="terms">Term</a> <a href="privacy">Privacy</a> <a href="security">Security</a> <a href="contact">Contact</a>
+			<a href="terms">Home</a>
+			<a href="privacy">Course</a>
+			<a href="security">Student</a>
+			<a href="contact">Institute</a>
 		</div>
 	</header>
 	<section>
-		<table>
-			<thead>
-				<tr>
-					<td>Name</td>
-					<td>Description</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Sample</td>
-					<td>This is table sample defination</td>
-				</tr>
-				<tr>
-					<td>Sample</td>
-					<td>This is table sample defination</td>
-				</tr>
-				<tr>
-					<td>Sample</td>
-					<td>This is table sample defination</td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="dataList">
+			<table>
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Description</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Sample</td>
+						<td>This is table sample defination</td>
+					</tr>
+					<tr>
+						<td>Sample</td>
+						<td>This is table sample defination</td>
+					</tr>
+					<tr>
+						<td>Sample</td>
+						<td>This is table sample defination</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="clear"></div>
 		<form>
 			<div id="error">Sample Error</div>
 			<label>First Name: </label>
@@ -52,13 +58,17 @@
 			<label>Gender: </label>
 			<input type="text" size="30"/>
 			<input type="submit" value="Save"/>
-			<input type="reset" value="Cancle"/>
+			<input type="reset" value="Clear"/>
 			<input type="button" value="Go"/>
 		</form>
+		<div class="clear"></div>
+		<button>Samsple</button>
 	</section>
 	<footer>
-		<a href="terms">Term</a> | <a href="privacy">Privacy</a> | <a href="security">Security</a> | <a href="contact">Contact</a>
-		<p>&copy; 2015 - 2017 Aurora Inc. All rights reserved.</p>
+		<div class="formater">
+			<div class="copy">&copy; 2015 - 2017, Aurora Inc.</div>
+			<a href="terms">Term</a> <a href="privacy">Privacy</a> <a href="security">Security</a> <a href="contact">Contact</a>
+		</div>
 	</footer>
 </body>
 </html>

@@ -13,25 +13,50 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
         
     <context:component-scan base-package="com.aurora.crms"/>
+    
+    <!-- This will enable MVC based annotation for the application  -->
     <mvc:annotation-driven/>
     
+    <!-- This will configure static resources path  -->
     <mvc:resources mapping="/Resources/**" location="/Resources/"/>
-      
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    
+    <!-- This will configure view resolvers -->  
+    <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+        <property name="order" value="1" />
+	</bean>
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/Views/"/>
         <property name="suffix" value=".jsp"/>
+        <property name="order" value="2" />
     </bean>
     
-    <bean id="messageSource"
-		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+    <bean id= "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+   		<property name="basename" value="messages"/> 
+	</bean>
+	
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/Tiles/Definition/tile.xml</value>
+            </list>
+        </property>
+	</bean>
+    
+    <!-- These bean configuration are for internalization -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="classpath:messages" />
 	</bean>
-	 <!--Those things are for internalization -->
+	
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="language"></bean>
 	</mvc:interceptors>
 
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" p:defaultLocale="en"/>
     
-    
+    <!-- This will configure for file upload -->
+    <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<property name="maxUploadSize" value="10240000"/>
+	</bean>
 </beans>

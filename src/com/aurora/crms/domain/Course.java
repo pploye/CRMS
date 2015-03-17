@@ -23,13 +23,13 @@ public class Course {
 	private Date endDate;
 
 	@ManyToMany()
-	@JoinTable(name = "COURSE_PROGRAM" , joinColumns = {@JoinColumn(name ="COURSE_ID")} , inverseJoinColumns ={ @JoinColumn(name = "PROGRAM_ID")} )
+	@JoinTable(name = "COURSE_PROGRAM", joinColumns = { @JoinColumn(name = "COURSE_ID") }, inverseJoinColumns = { @JoinColumn(name = "PROGRAM_ID") })
 	private Set<Program> programs;
 
 	@ManyToMany()
-	@JoinTable(name = "COURSE_PROFESSOR" , joinColumns = {@JoinColumn(name ="COURSE_ID")} , inverseJoinColumns ={ @JoinColumn(name = "PROFESSOR_ID")} )
+	@JoinTable(name = "COURSE_PROFESSOR", joinColumns = { @JoinColumn(name = "COURSE_ID") }, inverseJoinColumns = { @JoinColumn(name = "PROFESSOR_ID") })
 	private List<Professor> professors;
-	
+
 	public Set<Program> getPrograms() {
 		return programs;
 	}

@@ -7,12 +7,17 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Institution {
 
 	@Id
 	private String Code;
+	
+	@NotEmpty(message="Enter the Institution name")
 	private String Name;
+	
 	private Date dateEstablished;
 	private String Owner;
 	private String Vision;

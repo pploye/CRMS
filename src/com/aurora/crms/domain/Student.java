@@ -3,6 +3,10 @@ package com.aurora.crms.domain;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
@@ -10,6 +14,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
 public class Student {
 	
 	@NotEmpty
@@ -23,19 +28,36 @@ public class Student {
 	private String gender;
 	@Past
 	private Date dateOfBirth;
+	@ManyToOne@JoinColumn(name="PROGRAM_ID")
+	private Program program;
 	
-	private Address address;
+	@OneToMany(mappedBy="student")
+	private List <Address> addresses;
 	
-	private List <Course> registeredCourses;
+	@ManyToOne 
+	@JoinColumn(name="DEPT_ID")
+	private Department department;
 	
-	public Address getAddress() {
-		return address;
+	public Department getDepartment() {
+		return department;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
+
+	private List <Course> registeredCourses;
 	
+
+	
+	public List<Address> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
+	}
+
 	public List<Course> getRegisteredCourses() {
 		return registeredCourses;
 	}

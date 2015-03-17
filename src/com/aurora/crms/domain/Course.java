@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -18,6 +21,10 @@ public class Course {
 
 	@OneToMany()
 	private List<Program> programs;
+	
+	 @ManyToMany()
+	 @JoinTable(name = "STUDENT_COURSE", joinColumns = { @JoinColumn(name = "STUDENT_ID") }, inverseJoinColumns = { @JoinColumn(name = "COURSE_ID") })
+	  private List <Course> courses;
 
 	public int getCourseId() {
 

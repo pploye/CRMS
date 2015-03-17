@@ -1,7 +1,14 @@
 package com.aurora.crms.domain;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 public class Address {
 	private String addressCode;
+	
+	@ManyToOne
+	@JoinColumn(name="STUDID")
+	private Student student;
 
 	public String getAddressCode() {
 		return addressCode;

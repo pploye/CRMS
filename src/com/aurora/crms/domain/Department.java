@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 @Entity(name = "Department")
 public class Department {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	private String id;
 
 	@Size(min=3, max=30) 
 	private String name;
@@ -32,12 +32,22 @@ public class Department {
 		this.students = students;
 	}
 
-	public int getId() {
+	
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
+	}
+
+	public List<Professor> getProfessors() {
+		return professors;
+	}
+
+	public void setProfessors(List<Professor> professors) {
+		this.professors = professors;
 	}
 
 	public String getName() {

@@ -22,20 +22,28 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Student {
 	
 	@NotEmpty
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	private String sId;
+	@Id 
+	private String studentId;
 	@NotNull
 	@Size(min=3, max=30, message="Your first name should be between {min} and {max} characters")
 	@Pattern(regexp="[^0-9]*", message="Should not include digits")
-	private String sFirstName;
+	private String firstname;
 	@Size(min=3, max=30)
-	private String sLastName;
+	private String lastname;
 	@Size(min=1)
 	private String gender;
 	@Past @NotNull
 	private Date dateOfBirth;
 	@ManyToOne@JoinColumn(name="PROGRAM_ID")
 	private Program program;
+	public Program getProgram() {
+		return program;
+	}
+
+	public void setProgram(Program program) {
+		this.program = program;
+	}
+
 	@Email
 	private String email;
 	
@@ -81,21 +89,30 @@ public class Student {
 	public void setRegisteredCourses(List<Course> registeredCourses) {
 		this.registeredCourses = registeredCourses;
 	}
-	
-	public void setsId(String sId) {
-		this.sId = sId;
-	}
-	
-	public String getsFirstName() {
-		return sFirstName;
+
+
+	public String getStudentId() {
+		return studentId;
 	}
 
-	public String getsLastName() {
-		return sLastName;
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
 	}
 
-	public void setsLastName(String sLastName) {
-		this.sLastName = sLastName;
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getGender() {

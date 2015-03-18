@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
 public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int courseId;
+	private String courseId;
 	
 	@NotNull
 	@Size(min=3, max=30) 
@@ -62,13 +62,22 @@ public class Course {
 		this.professors = professors;
 	}
 
-	public int getCourseId() {
 
+
+	public String getCourseId() {
 		return courseId;
 	}
 
-	public void setCourseId(int courseId) {
+	public void setCourseId(String courseId) {
 		this.courseId = courseId;
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 	public String getName() {

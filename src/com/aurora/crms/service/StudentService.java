@@ -10,7 +10,7 @@ import com.aurora.crms.domain.Program;
 import com.aurora.crms.domain.Student;
 
 @Service
-public class StudentService implements IStudentService{
+public class StudentService implements IStudentService {
 
 	@Override
 	public boolean updateProfile(Student student) {
@@ -33,7 +33,7 @@ public class StudentService implements IStudentService{
 	@Override
 	public void displayAcademicYear() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class StudentService implements IStudentService{
 	@Override
 	public void drop(Course course) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -72,4 +72,15 @@ public class StudentService implements IStudentService{
 		return null;
 	}
 
+	@Override
+	public List<Student> getAllStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Student getStudentById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

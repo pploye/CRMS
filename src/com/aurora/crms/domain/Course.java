@@ -1,12 +1,13 @@
+
 package com.aurora.crms.domain;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -15,18 +16,40 @@ import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
+
+
 @Entity(name = "Course")
 public class Course {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id @NotNull
+	@Column(name="Corse_Code")
 	private String courseId;
 
 	@NotNull
 	@Size(min = 3, max = 30)
+	@Column(name="Course_Name")
 	private String courseName;
+	
+	@Column(name="Credit_Hour")
+	@NotNull
+	private String creditHour;
 
+	@Column(name="Description")
 	private String courseDescription;
+	
+	@Column(name = "Is_Trashed")
+	private boolean isTrashed = false;
+	
+	@NotNull
+    @Column(name = "Trashed_Date")
+    private Date trashedDate;
+    
+    @Column(name = "Is_Active")
+    private boolean isActive = true;
+    
+    @Column(name = "Activate_Date")
+    private Date activeDate;
 
 	@Future
 	private Date startDate;
@@ -62,12 +85,52 @@ public class Course {
 		this.courseName = courseName;
 	}
 
+	public String getCreditHour() {
+		return creditHour;
+	}
+
+	public void setCreditHour(String creditHour) {
+		this.creditHour = creditHour;
+	}
+
 	public String getCourseDescription() {
 		return courseDescription;
 	}
 
 	public void setCourseDescription(String courseDescription) {
 		this.courseDescription = courseDescription;
+	}
+
+	public boolean isTrashed() {
+		return isTrashed;
+	}
+
+	public void setTrashed(boolean isTrashed) {
+		this.isTrashed = isTrashed;
+	}
+
+	public Date getTrashedDate() {
+		return trashedDate;
+	}
+
+	public void setTrashedDate(Date trashedDate) {
+		this.trashedDate = trashedDate;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public Date getActiveDate() {
+		return activeDate;
+	}
+
+	public void setActiveDate(Date activeDate) {
+		this.activeDate = activeDate;
 	}
 
 	public Date getStartDate() {
@@ -110,3 +173,4 @@ public class Course {
 		this.professors = professors;
 	}
 }
+

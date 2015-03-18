@@ -4,7 +4,7 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <section>
-	<form:form commandName="student" action="profile">
+	<form:form commandName="editstudent" action="profile">
 		<form:errors path="*" id="error" element="div"/>
 		
 		<label><spring:message code="student.id" text="ID Number"/></label>
@@ -25,8 +25,8 @@
 		
 		<label><spring:message code="student.dateOfBirth" text="BirthDate"/></label>
 		<form:input path="dateOfBirth"/>
-	
-		<input type="reset" value="<spring:message code='reset' text='Clear'/>" />
+		
+		<input type="reset" value="<spring:message code='clear' text='Clear'/>" />
 		<input type="submit" value="<spring:message code='update' text='Update'/>" />
 	</form:form>
 </section>

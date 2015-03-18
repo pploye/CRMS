@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
@@ -13,9 +15,7 @@ import javax.validation.constraints.Size;
 
 @Entity(name = "Professor")
 public class Professor {
-
 	
-
 	@Id
 	@NotNull
 	@Column(name="Professor_Code")
@@ -63,12 +63,16 @@ public class Professor {
 	@JoinColumn(name="DEPT_ID")
 	private Department department;
 
-	public String getProfessorId() {
+	@ManyToMany
+	@JoinTable(name = "PROFESSOR_ADDRESS", joinColumns = { @JoinColumn(name = "PROFESSOR_ID") }, inverseJoinColumns = { @JoinColumn(name = "ADDRESS_ID") })
+	private Address address;
+
+	public String getProfessorCode() {
 		return professorCode;
 	}
 
-	public void setProfessorId(String professorId) {
-		this.professorCode = professorId;
+	public void setProfessorCode(String professorCode) {
+		this.professorCode = professorCode;
 	}
 
 	public String getFirstName() {
@@ -95,30 +99,6 @@ public class Professor {
 		this.gender = gender;
 	}
 
-	public String getEducationLevel() {
-		return educationLevel;
-	}
-
-	public void setEducationLevel(String educationLevel) {
-		this.educationLevel = educationLevel;
-	}
-
-	public Department getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-	
-	public String getProfessorCode() {
-		return professorCode;
-	}
-
-	public void setProfessorCode(String professorCode) {
-		this.professorCode = professorCode;
-	}
-
 	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
@@ -133,6 +113,14 @@ public class Professor {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getEducationLevel() {
+		return educationLevel;
+	}
+
+	public void setEducationLevel(String educationLevel) {
+		this.educationLevel = educationLevel;
 	}
 
 	public boolean isTrashed() {
@@ -165,5 +153,21 @@ public class Professor {
 
 	public void setActiveDate(Date activeDate) {
 		this.activeDate = activeDate;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 }

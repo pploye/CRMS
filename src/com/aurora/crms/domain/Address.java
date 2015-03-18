@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -68,7 +67,7 @@ public class Address {
     private Date activeDate;
     
     @Column(name = "Fax")
-    private String fax;
+    private String Fax;
     
     // Relationship
     @ManyToOne
@@ -188,11 +187,11 @@ public class Address {
 	}
 
 	public String getFax() {
-		return fax;
+		return Fax;
 	}
 
 	public void setFax(String fax) {
-		this.fax = fax;
+		Fax = fax;
 	}
 
 	public Institution getInstitute() {

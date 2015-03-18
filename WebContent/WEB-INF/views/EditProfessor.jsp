@@ -4,29 +4,30 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <section>
-	<form:form commandName="student" action="profile">
+<form:form modelAttribute="editprofessor">
 		<form:errors path="*" id="error" element="div"/>
 		
-		<label><spring:message code="student.id" text="ID Number"/></label>
-		<form:input path="studentId"/>
+		<label><spring:message code="professor.professorId" text= "Professor ID"/></label>
+		<form:input type="text" path="professorId"/>
 		
-		<label><spring:message code="student.firstName" text="First Name"/></label>
+		<label><spring:message code="professor.firstName"  text= "Professor FirstName"/></label>
 		<form:input path="firstName" />
 		
-		<label><spring:message code="student.lastName" text="Last Name"/></label>
+		<label><spring:message code="professor.lastName" text="Professor LastName"/></label>
 		<form:input path="lastName" />
 		
-		<label><spring:message code="student.gender" text="Gender"/></label>
+		<label><spring:message code="professor.gender" text="Gender"/></label>
 		<form:select path="gender">
 			<form:option label="Select Gender" value="0"/>
 			<form:option label="Male" value="Male"/>
 			<form:option label="Female" value="Female"/>
 		</form:select>
 		
-		<label><spring:message code="student.dateOfBirth" text="BirthDate"/></label>
-		<form:input path="dateOfBirth"/>
-	
-		<input type="reset" value="<spring:message code='reset' text='Clear'/>" />
-		<input type="submit" value="<spring:message code='update' text='Update'/>" />
+		<label><spring:message code="professor.educationLevel" text="Educational Level"/></label>
+		<form:input path="educationLevel"/>
+		
+		
+		
+		<input type="submit" value="<spring:message code="professor.add" text="Add Professor"/>"/>
 	</form:form>
 </section>

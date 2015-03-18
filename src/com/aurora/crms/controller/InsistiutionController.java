@@ -7,9 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/insistiution")
 public class InsistiutionController {
 	
-	@RequestMapping("/")
-	public String institutionForm(){
-		return "";
+	@RequestMapping("/institution_form")
+	public String getInstitutionForm(){
+		return "InstitutionForm";
+	}
+	
+	
+	@RequestMapping("/save_institution")
+	public String saveInstitute(){
+		return "InstitutionDetail";
 	}
 
 }

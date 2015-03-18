@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/insistiution")
-public class InsistiutionController {
+public class InstitutionController{
 	
 	@RequestMapping("/institution_form")
 	public String getInstitutionForm(){
@@ -17,5 +17,4 @@ public class InsistiutionController {
 	public String saveInstitute(){
 		return "InstitutionDetail";
 	}
-
 }

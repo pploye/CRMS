@@ -9,4 +9,12 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/template/Content.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
 	</definition>
+
+	<definition name="addProgram" extends= "template">
+		<put-attribute name="title" value="Create Program" />
+		<put-attribute name="content" value = "/WEB-INF/views/CourseForm.jsp"/>
+	</definition>
+	
+	
+	
 </tiles-definitions>

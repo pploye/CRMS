@@ -1,25 +1,26 @@
 package com.aurora.crms.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.aurora.crms.repository.IProgramRepository;
+import com.aurora.crms.domain.Program;
+
+
 
 @Service
 @Transactional
 public class ProgramService implements IProgramService {
 	
-	@Autowired
-	IProgramRepository programRepository;
+	
 	@Override
-	public void saveProgram() {
+	public void saveProgram(Program program) {
 	
 		
 	}
 
 	@Override
-	public void get() {
+	public void get(int id) {
 		// TODO Auto-generated method stub
 		
 	}

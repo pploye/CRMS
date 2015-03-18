@@ -18,58 +18,12 @@ public class Institution {
 	@NotEmpty(message = "Enter the Institution name")
 	private String institutionName;
 
-	private Date dateEstablished;
-	private String institutionOwner;
-	private String institutionVision;
+	private String mission;
+	private String vision;
+	private String pageName;
+	private String logoPath;
+	private Date establishmentDate; 
 
 	@OneToMany(mappedBy = "institute")
 	private List<Address> addresses;
-
-	public String getInstitutionCode() {
-		return institutionCode;
-	}
-
-	public void setInstitutionCode(String institutionCode) {
-		this.institutionCode = institutionCode;
-	}
-
-	public String getInstitutionName() {
-		return institutionName;
-	}
-
-	public void setInstitutionName(String institutionName) {
-		this.institutionName = institutionName;
-	}
-
-	public Date getDateEstablished() {
-		return dateEstablished;
-	}
-
-	public void setDateEstablished(Date dateEstablished) {
-		this.dateEstablished = dateEstablished;
-	}
-
-	public String getInstitutionOwner() {
-		return institutionOwner;
-	}
-
-	public void setInstitutionOwner(String institutionOwner) {
-		this.institutionOwner = institutionOwner;
-	}
-
-	public String getInstitutionVision() {
-		return institutionVision;
-	}
-
-	public void setInstitutionVision(String institutionVision) {
-		this.institutionVision = institutionVision;
-	}
-
-	public List<Address> getAddresses() {
-		return addresses;
-	}
-
-	public void setAddresses(List<Address> addresses) {
-		this.addresses = addresses;
-	}
 }

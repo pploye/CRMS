@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `Student`(
     `Is_Trashed` BOOLEAN NULL DEFAULT FALSE,
     `Trashed_Date` DATETIME NOT NULL,
     `Is_Active` BOOLEAN NULL DEFAULT FALSE,
-    `Active_Date` DATETIME,
+    `Active_Date` DATETIME NULL,
     PRIMARY KEY(`Student_Id`)
 );
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `Institution`(
     `Is_Trashed` BOOLEAN NULL DEFAULT FALSE,
     `Trashed_Date` DATETIME NOT NULL,
     `Is_Active` BOOLEAN NULL DEFAULT FALSE,
-    `Active_Date` DATETIME,
+    `Active_Date` DATETIME NULL,
     PRIMARY KEY(`Student_Id`)
 );
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `Course`(
     `Is_Trashed` BOOLEAN NULL DEFAULT FALSE,
     `Trashed_Date` DATETIME NOT NULL,
     `Is_Active` BOOLEAN NULL DEFAULT FALSE,
-    `Active_Date` DATETIME,
+    `Active_Date` DATETIME NULL,
     PRIMARY KEY(`Student_Code`)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `Department`(
     `Is_Trashed` BOOLEAN NULL DEFAULT FALSE,
     `Trashed_Date` DATETIME NOT NULL,
     `Is_Active` BOOLEAN NULL DEFAULT FALSE,
-    `Active_Date` DATETIME,
+    `Active_Date` DATETIME NULL,
     PRIMARY KEY(`Department_Code`)
 );
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `Professor`(
     `Is_Trashed` BOOLEAN NULL DEFAULT FALSE,
     `Trashed_Date` DATETIME NOT NULL,
     `Is_Active` BOOLEAN NULL DEFAULT FALSE,
-    `Active_Date` DATETIME,
+    `Active_Date` DATETIME NULL,
     PRIMARY KEY(`Professor_Code`)
 );
 
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `Program`(
     `Is_Trashed` BOOLEAN NULL DEFAULT FALSE,
     `Trashed_Date` DATETIME NOT NULL,
     `Is_Active` BOOLEAN NULL DEFAULT FALSE,
-    `Active_Date` DATETIME,
+    `Active_Date` DATETIME NULL,
     PRIMARY KEY(`Program_Code`)
 );
 
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `Accadamic_Year`(
     `Is_Trashed` BOOLEAN NULL DEFAULT FALSE,
     `Trashed_Date` DATETIME NOT NULL,
     `Is_Active` BOOLEAN NULL DEFAULT FALSE,
-    `Active_Date` DATETIME,
+    `Active_Date` DATETIME NULL,
     PRIMARY KEY(`Program_Code`)
 );
 
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `User`(
     `Is_Trashed` BOOLEAN NULL DEFAULT FALSE,
     `Trashed_Date` DATETIME NOT NULL,
     `Is_Active` BOOLEAN NULL DEFAULT FALSE,
-    `Active_Date` DATETIME,
+    `Active_Date` DATETIME NULL,
     PRIMARY KEY(`User`)
 );
 

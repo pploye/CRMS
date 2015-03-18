@@ -55,7 +55,7 @@ public class Address {
     @Column(name = "Is_Cell")
     private boolean isCell = false;
     
-    @Column(name = "Is_Cell")
+    @Column(name = "Is_Trashed")
     private boolean isTrashed = false;
     
     @Column(name = "Trashed_Date")

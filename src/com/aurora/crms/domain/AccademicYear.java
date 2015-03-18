@@ -2,28 +2,49 @@ package com.aurora.crms.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "AccademicYear")
+@Entity(name = "Accademic_Year")
 public class AccademicYear {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@Column(name = "Accadamic_Year_Code")
+	private String accadamicYearCode;
 
+    @Column(name = "Name")
 	private String name;
+    
+    @Column(name = "Description")
 	private String description;
+    
+    @Column(name = "Start_Date")
 	private Date startDate;
+    
+    @Column(name = "End_Date")
 	private Date endDate;
+    
+    @Column( name = "Is_Trashed")
+    private boolean isTrashed;
+    
+    @Column( name = "Trashed_Date")
+    private boolean trashedDate;
+    
+    @Column( name = "Is_Active")
+    private boolean isActive;
+    
+    @Column( name = "Active_Date")
+    private boolean activeDate;
 
-	public int getId() {
-		return id;
+	public String getAccadamicYearCode() {
+		return accadamicYearCode;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setAccadamicYearCode(String accadamicYearCode) {
+		this.accadamicYearCode = accadamicYearCode;
 	}
 
 	public String getName() {
@@ -58,4 +79,35 @@ public class AccademicYear {
 		this.endDate = endDate;
 	}
 
+	public boolean isTrashed() {
+		return isTrashed;
+	}
+
+	public void setTrashed(boolean isTrashed) {
+		this.isTrashed = isTrashed;
+	}
+
+	public boolean isTrashedDate() {
+		return trashedDate;
+	}
+
+	public void setTrashedDate(boolean trashedDate) {
+		this.trashedDate = trashedDate;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public boolean isActiveDate() {
+		return activeDate;
+	}
+
+	public void setActiveDate(boolean activeDate) {
+		this.activeDate = activeDate;
+	}
 }

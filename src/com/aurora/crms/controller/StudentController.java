@@ -13,12 +13,12 @@ import com.aurora.crms.domain.Student;
 @RequestMapping("/student")
 public class StudentController {
 
-	@RequestMapping(value = { "/profile" }, method = RequestMethod.GET)
+	@RequestMapping(value = {"/","/profile"}, method = RequestMethod.GET)
 	public String displayProfile(@ModelAttribute("student") Student student) {
 		return "studentprofile"; // This should match the tile definition name
 	}
 
-	@RequestMapping(value = { "/profile" }, method = RequestMethod.POST)
+	@RequestMapping(value = {"/profile"}, method = RequestMethod.POST)
 	public String updateProfile(@ModelAttribute("student") @Valid Student student, BindingResult result) {
 		if (result.hasErrors())
 			return "StudentForm";

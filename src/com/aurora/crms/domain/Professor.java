@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private String professorId;
 	@Size(min=3, max=30) 
 	private String firstName;
 	@Size(min=3, max=30) 
@@ -23,37 +23,52 @@ public class Professor {
 	@ManyToOne 
 	@JoinColumn(name="DEPT_ID")
 	private Department department;
-	
-	public int getId() {
-		return id;
+
+	public String getProfessorId() {
+		return professorId;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public void setProfessorId(String professorId) {
+		this.professorId = professorId;
 	}
+
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	public String getGender() {
 		return gender;
 	}
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
 	public String getEducationLevel() {
 		return educationLevel;
 	}
+
 	public void setEducationLevel(String educationLevel) {
 		this.educationLevel = educationLevel;
 	}
 
+	public Department getDepartment() {
+		return department;
+	}
 
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 }

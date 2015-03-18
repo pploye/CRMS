@@ -9,37 +9,36 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-@Entity
+@Entity(name = "Institution")
 public class Institution {
 
 	@Id
-	private String Code;
-	
-	@NotEmpty(message="Enter the Institution name")
-	private String Name;
-	
+	private String institutionCode;
+
+	@NotEmpty(message = "Enter the Institution name")
+	private String institutionName;
+
 	private Date dateEstablished;
-	private String Owner;
-	private String Vision;
-	
-	@OneToMany(mappedBy ="institute")
+	private String institutionOwner;
+	private String institutionVision;
+
+	@OneToMany(mappedBy = "institute")
 	private List<Address> addresses;
 
-	
-	public String getCode() {
-		return Code;
+	public String getInstitutionCode() {
+		return institutionCode;
 	}
 
-	public void setCode(String code) {
-		Code = code;
+	public void setInstitutionCode(String institutionCode) {
+		this.institutionCode = institutionCode;
 	}
 
-	public String getName() {
-		return Name;
+	public String getInstitutionName() {
+		return institutionName;
 	}
 
-	public void setName(String name) {
-		Name = name;
+	public void setInstitutionName(String institutionName) {
+		this.institutionName = institutionName;
 	}
 
 	public Date getDateEstablished() {
@@ -50,38 +49,20 @@ public class Institution {
 		this.dateEstablished = dateEstablished;
 	}
 
-	public String getOwner() {
-		return Owner;
+	public String getInstitutionOwner() {
+		return institutionOwner;
 	}
 
-	public void setOwner(String owner) {
-		Owner = owner;
+	public void setInstitutionOwner(String institutionOwner) {
+		this.institutionOwner = institutionOwner;
 	}
 
-	public String getVision() {
-		return Vision;
+	public String getInstitutionVision() {
+		return institutionVision;
 	}
 
-	public void setVision(String vision) {
-		Vision = vision;
-	}
-
-
-
-	public String getInstitutionCode() {
-		return Code;
-	}
-
-	public void setInstitutionCode(String institutionCode) {
-		this.Code = institutionCode;
-	}
-
-	public String getInstitutionName() {
-		return Name;
-	}
-
-	public void setInstitutionName(String institutionName) {
-		this.Name = institutionName;
+	public void setInstitutionVision(String institutionVision) {
+		this.institutionVision = institutionVision;
 	}
 
 	public List<Address> getAddresses() {

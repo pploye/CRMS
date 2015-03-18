@@ -17,74 +17,57 @@ import javax.validation.constraints.Size;
 
 @Entity(name = "Course")
 public class Course {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int courseId;
-	
-	@NotNull
-	@Size(min=3, max=30) 
-	private String name;
-	
+	private String courseId;
 
-	private String description;
-	
+	@NotNull
+	@Size(min = 3, max = 30)
+	private String courseName;
+
+	private String courseDescription;
+
 	@Future
 	private Date startDate;
-	
+
 	@Future
 	private Date endDate;
 
-	@ManyToMany()
+	@ManyToMany
 	@JoinTable(name = "STUDENT_COURSE", joinColumns = { @JoinColumn(name = "STUDENT_ID") }, inverseJoinColumns = { @JoinColumn(name = "COURSE_ID") })
 	private List<Course> courses;
 
-	@ManyToMany()
+	@ManyToMany
 	@JoinTable(name = "COURSE_PROGRAM", joinColumns = { @JoinColumn(name = "COURSE_ID") }, inverseJoinColumns = { @JoinColumn(name = "PROGRAM_ID") })
 	private Set<Program> programs;
 
-	@ManyToMany()
+	@ManyToMany
 	@JoinTable(name = "COURSE_PROFESSOR", joinColumns = { @JoinColumn(name = "COURSE_ID") }, inverseJoinColumns = { @JoinColumn(name = "PROFESSOR_ID") })
 	private List<Professor> professors;
 
-	public Set<Program> getPrograms() {
-		return programs;
-	}
-
-	public void setPrograms(Set<Program> programs) {
-		this.programs = programs;
-	}
-
-	public List<Professor> getProfessors() {
-		return professors;
-	}
-
-	public void setProfessors(List<Professor> professors) {
-		this.professors = professors;
-	}
-
-	public int getCourseId() {
-
+	public String getCourseId() {
 		return courseId;
 	}
 
-	public void setCourseId(int courseId) {
+	public void setCourseId(String courseId) {
 		this.courseId = courseId;
 	}
 
-	public String getName() {
-		return name;
+	public String getCourseName() {
+		return courseName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getCourseDescription() {
+		return courseDescription;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setCourseDescription(String courseDescription) {
+		this.courseDescription = courseDescription;
 	}
 
 	public Date getStartDate() {
@@ -101,6 +84,30 @@ public class Course {
 
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+
+	public Set<Program> getPrograms() {
+		return programs;
+	}
+
+	public void setPrograms(Set<Program> programs) {
+		this.programs = programs;
+	}
+
+	public List<Professor> getProfessors() {
+		return professors;
+	}
+
+	public void setProfessors(List<Professor> professors) {
+		this.professors = professors;
 	}
 
 }

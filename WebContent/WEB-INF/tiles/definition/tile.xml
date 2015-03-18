@@ -6,7 +6,7 @@
 	<definition name="template" template="/WEB-INF/tiles/template/Template.jsp">
 		<put-attribute name="title" value="Aurora CRMS(Course Registration Management System)"/>
 		<put-attribute name="header" value="/WEB-INF/tiles/template/Header.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/tiles/template/Content.jsp"/>
+		<put-attribute name="content" value=""/>
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
 	</definition>
 	<!-- Student -->

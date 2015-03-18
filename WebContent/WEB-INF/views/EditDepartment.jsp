@@ -4,7 +4,7 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <section>
-<form:form modelAttribute="department">
+<form:form modelAttribute="editdepartment">
 		<form:errors path="*" id="error" element="div"/>
  		 
            
@@ -18,7 +18,7 @@
             <form:input path="departmentDescription" id="departmentDescription" />
            
           <label><spring:message code="program" text="program"/></label>
-           	<form:select id="" path="registeredCourses" items="${programs}" itemLabel="name" itemValue="courseId"/>
+           	<form:select id="" path="registeredCourses" items="${courses}" itemLabel="name" itemValue="courseId"/>
            
             
            <input type="submit" value="<spring:message code="department.add" text="Add Department"/>"/>

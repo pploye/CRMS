@@ -25,7 +25,7 @@ public class Program {
 	@OneToMany(mappedBy = "program")
 	List<Student> student;
 
-	@ManyToMany()
+	@ManyToMany
 	@JoinTable(name = "PROGRAM_ACCADEMICYEAR", joinColumns = { @JoinColumn(name = "PROGRAM_ID") }, inverseJoinColumns = { @JoinColumn(name = "ACCADEMICYEAR_ID") })
 	private List<AccademicYear> accademicYears;
 

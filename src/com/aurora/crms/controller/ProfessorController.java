@@ -9,28 +9,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.aurora.crms.domain.Address;
-import com.aurora.crms.domain.Course;
 
+import com.aurora.crms.domain.Professor;
 @Controller
-@RequestMapping("/address")
-public class AddressController {
-	
+@RequestMapping("/professor")
+public class ProfessorController {
 	@RequestMapping(value = {"/","/add" }, method = RequestMethod.GET)
-	public String addAddress(@ModelAttribute Address address	) {
-		return "addAddressTile"; // This should match the tile definition name
+	public String addProfessor(@ModelAttribute Professor professor	) {
+		return "addProfessorTile"; // This should match the tile definition name
 	}
 
 	@RequestMapping(value = {"/edit" }, method = RequestMethod.POST)
-	public String editCourse(@Valid Address address, BindingResult result) {
+	public String editCourse(@Valid Professor professor, BindingResult result) {
 		if (result.hasErrors())
-			return "editAddressTile";
-		return "addressDetailTile";
+			return "editProfessorTile";
+		return "professorDetailTile";
 	}
 	
 	@RequestMapping(value = {"/list" }, method = RequestMethod.GET)
 	public String listStudent() {
-		return "addressDetailTile";
+		return "professorDetailTile";
 	}
 	
 	@RequestMapping(value = {"/detail","/detail/{id}" }, method = RequestMethod.GET)
@@ -38,8 +36,6 @@ public class AddressController {
 		if(id.length() <= 0){
 			// You have to fetch student with id from the repository using the student service
 		}
-		return "addressDetailTile";
+		return "professorDetailTile";
 	}
-
-
 }

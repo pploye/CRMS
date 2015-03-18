@@ -72,4 +72,16 @@ public class StudentService implements IStudentService{
 		return null;
 	}
 
+	@Override
+	public List<Student> getAllStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Student getStudentById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

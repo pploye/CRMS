@@ -4,12 +4,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
 public class Professor {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private String professorId;
 	@Size(min=3, max=30) 
 	private String firstName;
@@ -23,6 +25,10 @@ public class Professor {
 	@ManyToOne 
 	@JoinColumn(name="DEPT_ID")
 	private Department department;
+
+	@ManyToMany
+	@JoinTable(name = "PROFESSOR_ADDRESS", joinColumns = { @JoinColumn(name = "PROFESSOR_ID") }, inverseJoinColumns = { @JoinColumn(name = "ADDRESS_ID") })
+	private Address address;
 
 	public String getProfessorId() {
 		return professorId;

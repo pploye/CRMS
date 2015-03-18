@@ -19,5 +19,7 @@ public interface IStudentService {
 	public List <Course> getRegisteredCourses();
 	public List <Course> getSignedUpCourses();
 	public List <Course> getDroppedCourses();
+	public List <Student> getAllStudents();
+	public Student getStudentById(String id);
 
 }

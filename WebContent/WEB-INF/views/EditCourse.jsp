@@ -4,7 +4,7 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <section>
-<form:form modelAttribute="editedcourse">
+<form:form modelAttribute="editcourse">
 		<form:errors path="*" id="error" element="div"/>
  		 <label for="Course ID"> </label>
            <form:input path="courseId" />

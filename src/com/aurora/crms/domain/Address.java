@@ -10,6 +10,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
+
 @Entity(name = "Address")
 public class Address {
 	@Id
@@ -25,8 +27,11 @@ public class Address {
 
 	@Pattern(regexp = "^\\d{5}(-\\d{4})?$", message = "{Pattern.zipcode}")
 	private String zipCode;
-
+	
+	@Email
 	private String email;
+	//^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu)$
+	@Pattern(regexp = "", message = "{Pattern.website}")
 	private String website;
 	private String phoneNumber;
 	private String fax;

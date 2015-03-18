@@ -6,12 +6,18 @@
 		<table>
 			<thead>
 				<tr>
-					<td>Name</td>
+					<td>First Name</td>
+					<td>Last Name</td>
+					<td>Gender</td>
+					<td>Date of Birth</td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>Sample</td>
+					<td>${student.firstName}</td>
+					<td>${student.lastName}</td>
+					<td>${student.gender}</td>
+					<td>${student.dateOfBirth}</td>
 				</tr>
 			</tbody>
 		</table>

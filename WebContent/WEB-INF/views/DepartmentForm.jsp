@@ -8,14 +8,14 @@
 		<form:errors path="*" id="error" element="div"/>
  		 
            
-           <label for="id">Department ID</label>
-            <form:input path="id" id="id" />
+           <label for="departmentId">Department ID: </label>
+            <form:input path="departmentId" id="departmentId" />
             
-             <label for="name">Department Name</label>
-            <form:input path="name" id="name" />
+             <label for="departmentName">Department Name</label>
+            <form:input path="departmentName" id="departmentName" />
            
-           <label for="description">Department Description</label>
-            <form:input path="description" id="description" />
+           <label for="departmentDescription">Department Description</label>
+            <form:input path="departmentDescription" id="departmentDescription" />
             
             
            

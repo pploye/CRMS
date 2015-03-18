@@ -32,7 +32,7 @@ public class ProgramController {
 		}
 		
 	this.programService.saveProgram(NewProgram);
-		return "redirect : /ProgramsList";
+		return "redirect : /ProgramDetail";
 	}
 
 }

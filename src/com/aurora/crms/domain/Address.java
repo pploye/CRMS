@@ -68,7 +68,7 @@ public class Address {
     private Date activeDate;
     
     @Column(name = "Fax")
-    private String Fax;
+    private String fax;
     
     // Relationship
     @ManyToOne
@@ -188,11 +188,11 @@ public class Address {
 	}
 
 	public String getFax() {
-		return Fax;
+		return fax;
 	}
 
 	public void setFax(String fax) {
-		Fax = fax;
+		this.fax = fax;
 	}
 
 	public Institution getInstitute() {

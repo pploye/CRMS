@@ -8,6 +8,9 @@
 	
 		<form:errors path="*"/>
 		
+		<label for="ProgramCode" >Program Code:</label>
+		<form:input path="ProgramCode"/>
+		
 		<label for="ProgramName" >Program Name:</label>
 		<form:input path="name"/>
 		

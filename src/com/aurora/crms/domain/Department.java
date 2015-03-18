@@ -1,23 +1,41 @@
 package com.aurora.crms.domain;
 
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity(name = "Department")
 public class Department {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String departmentId;
+	@NotNull
+	@Column(name = "Department_Code")
+	private String departmentCode;
 
 	@Size(min = 3, max = 30)
+	@Column(name = "Department_Name")
 	private String departmentName;
-	private String departmentDescription;
+
+	@Column(name = "Description")
+	private String description;
+
+	@Column(name = "Is_Trashed")
+	private boolean isTrashed;
+
+	@Column(name = "Trashed_Date")
+	private Date Trashed_Date;
+
+	@Column(name = "Is_Active")
+	private boolean isActive;
+
+	@Column(name = "Active_Date")
+	private Date activeDate;
 
 	@OneToMany(mappedBy = "department")
 	private List<Student> students;
@@ -26,11 +44,11 @@ public class Department {
 	private List<Professor> professors;
 
 	public String getDepartmentId() {
-		return departmentId;
+		return departmentCode;
 	}
 
 	public void setDepartmentId(String departmentId) {
-		this.departmentId = departmentId;
+		this.departmentCode = departmentId;
 	}
 
 	public String getDepartmentName() {
@@ -42,11 +60,11 @@ public class Department {
 	}
 
 	public String getDepartmentDescription() {
-		return departmentDescription;
+		return description;
 	}
 
 	public void setDepartmentDescription(String departmentDescription) {
-		this.departmentDescription = departmentDescription;
+		this.description = departmentDescription;
 	}
 
 	public List<Student> getStudents() {

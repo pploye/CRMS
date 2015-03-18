@@ -4,25 +4,29 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <section>
-	<form:form modelAttribute="student">
+	<form:form commandName="student">
 		<form:errors path="*" id="error" element="div"/>
 		
-		<label><spring:message code="student.id" text= "ID"/></label>
-		<form:input type="text" path="sId"/>
+		<label><spring:message code="student.id" text="ID Number"/></label>
+		<form:input path="studentId"/>
 		
-		<label><spring:message code="student.firstname" /></label>
-		<form:input path="sFirstName" />
+		<label><spring:message code="student.firstName" text="First Name"/></label>
+		<form:input path="firstName" />
 		
-		<label><spring:message code="student.lastname" text="lastname"/></label>
-		<form:input path="sLastName" />
+		<label><spring:message code="student.lastName" text="Last Name"/></label>
+		<form:input path="lastName" />
 		
-		<label><spring:message code="student.gender" text="gender"/></label>
-		<form:radiobutton path="gender" value="M" label="M" />
-		<form:radiobutton path="gender" value="F" label="F" />
+		<label><spring:message code="student.gender" text="Gender"/></label>
+		<form:select path="gender">
+			<form:option label="Select Gender" value="0"/>
+			<form:option label="Male" value="Male"/>
+			<form:option label="Female" value="Female"/>
+		</form:select>
 		
-		<label><spring:message code="student.birthdate" text="birthdate"/></label>
+		<label><spring:message code="student.dateOfBirth" text="BirthDate"/></label>
 		<form:input path="dateOfBirth"/>
 		
-		<input type="submit" value="Update Profile"/>
+		<input type="reset" value="<spring:message code='student.clear' text='Clear'/>" />
+		<input type="submit" value="<spring:message code='student.update' text='Update'/>" />
 	</form:form>
 </section>

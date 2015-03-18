@@ -21,5 +21,4 @@ public interface IStudentService {
 	public List <Course> getDroppedCourses();
 	public List <Student> getAllStudents();
 	public Student getStudentById(String id);
-
 }

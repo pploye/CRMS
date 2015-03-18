@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
-
 <tiles-definitions>
 	<!-- This is the main template for the application  -->
 	<definition name="template" template="/WEB-INF/tiles/template/Template.jsp">
 		<put-attribute name="title" value="Aurora CRMS(Course Registration Management System)"/>
 		<put-attribute name="header" value="/WEB-INF/tiles/template/Header.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/tiles/template/Content.jsp"/>
+		<put-attribute name="content" value=""/>
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
 	</definition>
+	
 	<!-- Student -->
 	<definition name="studentprofile" extends="template">
 		<put-attribute name="title" value="Student Profile"/>
@@ -17,6 +17,15 @@
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
 	</definition>
 	
+	<!-- New Program -->
+	<definition name="addProgram" extends= "template">
+		<put-attribute name="title" value="Create Program" />
+		<put-attribute name="header" value="/WEB-INF/tiles/template/Header.jsp"/>
+		<put-attribute name="content" value = "/WEB-INF/views/CourseForm.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
+	</definition>
+	
+	<!-- Student Detail -->
 	<definition name="studentdetail" extends="template">
 		<put-attribute name="title" value="Information Saved"/>
 		<put-attribute name="header" value="/WEB-INF/tiles/template/StudentHeader.jsp"/>
@@ -24,36 +33,36 @@
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
 	</definition>
 	
-	
-		<definition name="studentlist" extends="template">
+	<!-- Student List -->
+	<definition name="studentlist" extends="template">
 		<put-attribute name="title" value="Information Saved"/>
 		<put-attribute name="header" value="/WEB-INF/tiles/template/StudentHeader.jsp"/>
 		<put-attribute name="content" value="/WEB-INF/views/StudentList.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
-		</definition>
+	</definition>
 	
 	<!-- Course -->
-	<definition name="addCourseTile" extends="template">
+	<definition name="addcoursetile" extends="template">
 		<put-attribute name="title" value="Information Saved"/>
 		<put-attribute name="header" value="/WEB-INF/tiles/template/StudentHeader.jsp"/>
 		<put-attribute name="content" value="/WEB-INF/views/CourseForm.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
-		</definition>
-		
-		<definition name="courseDetailTile" extends="template">
+	</definition>
+	
+	<!-- Course Detail-->
+	<definition name="coursedetailtile" extends="template">
 		<put-attribute name="title" value="Information Saved"/>
 		<put-attribute name="header" value="/WEB-INF/tiles/template/StudentHeader.jsp"/>
 		<put-attribute name="content" value="/WEB-INF/views/CourseDetail.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
-		</definition>
-		
-		<definition name="courseDetailTile" extends="template">
+	</definition>
+	
+	<!-- Course -->
+	<definition name="courselisttile" extends="template">
 		<put-attribute name="title" value="Information Saved"/>
 		<put-attribute name="header" value="/WEB-INF/tiles/template/StudentHeader.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/views/courseListTile.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/CoursesList.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
-		</definition>
-		
-	<!-- Professor -->
+	</definition>
 	
 </tiles-definitions>

@@ -16,14 +16,11 @@
 		<label><spring:message code="course.description" text="description"/></label>
 		<form:input path="description" />
 		
-		
-		
 		<label><spring:message code="course.startDate" text="startDate"/></label>
 		<form:input path="startDate"/>
 		
 		<label><spring:message code="course.endDate" text="endDate"/></label>
 		<form:input path="endDate"/>
-		
 		
 		<input type="submit" value="<spring:message code="course.add" text="Add Course"/>"/>
 	</form:form>

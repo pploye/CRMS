@@ -25,8 +25,8 @@
 		
 		<label><spring:message code="student.dateOfBirth" text="BirthDate"/></label>
 		<form:input path="dateOfBirth"/>
-		
-		<input type="reset" value="<spring:message code='clear' text='Clear'/>" />
+	
+		<input type="reset" value="<spring:message code='reset' text='Clear'/>" />
 		<input type="submit" value="<spring:message code='update' text='Update'/>" />
 	</form:form>
 </section>

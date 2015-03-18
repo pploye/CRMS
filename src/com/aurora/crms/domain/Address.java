@@ -1,8 +1,9 @@
 package com.aurora.crms.domain;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -15,37 +16,78 @@ import org.hibernate.validator.constraints.Email;
 @Entity(name = "Address")
 public class Address {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
 	@NotNull
+	@Column(name = "Address_Code")
+	private String addressCode;
+    
+    @Size(min = 2, max = 2, message = "Size.Address.State")
+    @Column(name = "State")
+    private String state;
+    
+    @Size(min = 2, max = 2, message = "Size.Address.Street")
+    @Column(name = "Street")
 	private String street;
-	@NotNull
-	private String city;
-	@Size(min = 2, max = 2, message = "Size.Address.state")
-	private String state;
-
-	@Pattern(regexp = "^\\d{5}(-\\d{4})?$", message = "{Pattern.zipcode}")
-	private String zipCode;
-	
-	@Email
-	private String email;
-	//^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu)$
-	@Pattern(regexp = "", message = "{Pattern.website}")
-	private String website;
-	private String phoneNumber;
-	private String fax;
-
-	@ManyToOne
+    
+    @Size(min = 2, max = 2, message = "Size.Address.City")
+    @Column(name = "City")
+    private String city;
+    
+    @NotNull
+    @Size(min = 2, max = 2, message = "Size.Address.Country")
+    @Column(name = "Country")
+    private String country;
+    
+    @Pattern(regexp = "^\\d{5}(-\\d{4})?$", message = "{Pattern.zipcode}")
+    @Column(name = "Zip_Code")
+    private String zipCode;
+    
+    @Email
+    @Column(name = "Email")
+    private String Email;
+    
+    @Column(name = "Website")
+    private String website;
+    
+    @Column(name = "Phone_Number")
+    private String phoneNumber;
+    
+    @Column(name = "Is_Cell")
+    private boolean isCell = false;
+    
+    @Column(name = "Is_Cell")
+    private boolean isTrashed = false;
+    
+    @Column(name = "Trashed_Date")
+    private Date trashedDate;
+    
+    @Column(name = "Is_Active")
+    private boolean isActive = true;
+    
+    @Column(name = "Activate_Date")
+    private Date activeDate;
+    
+    @Column(name = "Fax")
+    private String Fax;
+    
+    // Relationship
+    @ManyToOne
 	@JoinColumn(name = "INSTITUTE_ID")
 	private Institution institute;
 
-	public Long getId() {
-		return id;
+	public String getAddressCode() {
+		return addressCode;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setAddressCode(String addressCode) {
+		this.addressCode = addressCode;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public String getStreet() {
@@ -64,12 +106,12 @@ public class Address {
 		this.city = city;
 	}
 
-	public String getState() {
-		return state;
+	public String getCountry() {
+		return country;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	public String getZipCode() {
@@ -81,11 +123,11 @@ public class Address {
 	}
 
 	public String getEmail() {
-		return email;
+		return Email;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		Email = email;
 	}
 
 	public String getWebsite() {
@@ -104,12 +146,52 @@ public class Address {
 		this.phoneNumber = phoneNumber;
 	}
 
+	public boolean isCell() {
+		return isCell;
+	}
+
+	public void setCell(boolean isCell) {
+		this.isCell = isCell;
+	}
+
+	public boolean isTrashed() {
+		return isTrashed;
+	}
+
+	public void setTrashed(boolean isTrashed) {
+		this.isTrashed = isTrashed;
+	}
+
+	public Date getTrashedDate() {
+		return trashedDate;
+	}
+
+	public void setTrashedDate(Date trashedDate) {
+		this.trashedDate = trashedDate;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public Date getActiveDate() {
+		return activeDate;
+	}
+
+	public void setActiveDate(Date activeDate) {
+		this.activeDate = activeDate;
+	}
+
 	public String getFax() {
-		return fax;
+		return Fax;
 	}
 
 	public void setFax(String fax) {
-		this.fax = fax;
+		Fax = fax;
 	}
 
 	public Institution getInstitute() {
@@ -119,5 +201,4 @@ public class Address {
 	public void setInstitute(Institution institute) {
 		this.institute = institute;
 	}
-
 }

@@ -1,3 +1,6 @@
 /**
  * 
  */
+$.documnet.ready(function(){
+	
+});

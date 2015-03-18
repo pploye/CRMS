@@ -9,4 +9,11 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/template/Content.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
 	</definition>
+	<!-- Student -->
+	<definition name="studentprofile" extends="template">
+		<put-attribute name="title" value="Student Profile"/>
+		<put-attribute name="header" value="/WEB-INF/tiles/template/StudentHeader.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/StudentForm.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/tiles/template/Footer.jsp"/>
+	</definition>
 </tiles-definitions>

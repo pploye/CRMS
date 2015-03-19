@@ -5,8 +5,6 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -15,34 +13,25 @@ import org.hibernate.validator.constraints.Email;
 
 @Entity(name = "Address")
 public class Address {
-	@Id
-	@NotNull
-	@Column(name = "Address_Code")
+	@Id @NotNull @Column(name = "Address_Code")
 	private String addressCode;
     
-    @Size(min = 2, max = 2, message = "Size.Address.State")
-    @Column(name = "State")
+    @Size(min = 2, max = 2, message = "Size.Address.State") @Column(name = "State")
     private String state;
     
-    @Size(min = 2, max = 2, message = "Size.Address.Street")
-    @Column(name = "Street")
+    @Size(min = 2, max = 2, message = "Size.Address.Street") @Column(name = "Street")
 	private String street;
     
-    @Size(min = 2, max = 2, message = "Size.Address.City")
-    @Column(name = "City")
+    @Size(min = 2, max = 2, message = "Size.Address.City") @Column(name = "City")
     private String city;
     
-    @NotNull
-    @Size(min = 2, max = 2, message = "Size.Address.Country")
-    @Column(name = "Country")
+    @NotNull @Size(min = 2, max = 2, message = "Size.Address.Country") @Column(name = "Country")
     private String country;
     
-    @Pattern(regexp = "^\\d{5}(-\\d{4})?$", message = "{Pattern.zipcode}")
-    @Column(name = "Zip_Code")
+    @Pattern(regexp = "^\\d{5}(-\\d{4})?$", message = "{Pattern.zipcode}") @Column(name = "Zip_Code")
     private String zipCode;
     
-    @Email
-    @Column(name = "Email")
+    @Email @Column(name = "Email")
     private String Email;
     
     @Column(name = "Website")
@@ -68,11 +57,6 @@ public class Address {
     
     @Column(name = "Fax")
     private String Fax;
-    
-    // Relationship
-    @ManyToOne
-	@JoinColumn(name = "INSTITUTE_ID")
-	private Institution institute;
 
 	public String getAddressCode() {
 		return addressCode;
@@ -146,19 +130,19 @@ public class Address {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public boolean isCell() {
+	public boolean getIsCell() {
 		return isCell;
 	}
 
-	public void setCell(boolean isCell) {
+	public void setIsCell(boolean isCell) {
 		this.isCell = isCell;
 	}
 
-	public boolean isTrashed() {
+	public boolean getIsTrashed() {
 		return isTrashed;
 	}
 
-	public void setTrashed(boolean isTrashed) {
+	public void setIsTrashed(boolean isTrashed) {
 		this.isTrashed = isTrashed;
 	}
 
@@ -170,11 +154,11 @@ public class Address {
 		this.trashedDate = trashedDate;
 	}
 
-	public boolean isActive() {
+	public boolean getIsActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 
@@ -192,13 +176,5 @@ public class Address {
 
 	public void setFax(String fax) {
 		Fax = fax;
-	}
-
-	public Institution getInstitute() {
-		return institute;
-	}
-
-	public void setInstitute(Institution institute) {
-		this.institute = institute;
 	}
 }

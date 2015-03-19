@@ -1,16 +1,15 @@
 package com.aurora.crms.domain;
 
-import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 @Entity(name = "Program")
 public class Program {
@@ -39,13 +38,10 @@ public class Program {
     
     @Column( name = "Active_Date")
     private boolean activeDate;
-	
-	@OneToMany(mappedBy = "program")
-	List<Student> student;
-
-	@ManyToMany()
-	@JoinTable(name = "PROGRAM_ACCADEMICYEAR", joinColumns = { @JoinColumn(name = "PROGRAM_ID") }, inverseJoinColumns = { @JoinColumn(name = "ACCADEMICYEAR_ID") })
-	private List<AccademicYear> accademicYears;
+    
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "Program_Department", joinColumns = { @JoinColumn(name = "Program_Code") }, inverseJoinColumns = { @JoinColumn(name = "Department_Code")})
+	private Set<Department> departments;
 
 	public String getProgramCode() {
 		return programCode;
@@ -79,15 +75,15 @@ public class Program {
 		this.description = description;
 	}
 
-	public boolean isTrashed() {
+	public boolean getIsTrashed() {
 		return isTrashed;
 	}
 
-	public void setTrashed(boolean isTrashed) {
+	public void setIsTrashed(boolean isTrashed) {
 		this.isTrashed = isTrashed;
 	}
 
-	public boolean isTrashedDate() {
+	public boolean getTrashedDate() {
 		return trashedDate;
 	}
 
@@ -95,15 +91,15 @@ public class Program {
 		this.trashedDate = trashedDate;
 	}
 
-	public boolean isActive() {
+	public boolean getIsActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 
-	public boolean isActiveDate() {
+	public boolean getActiveDate() {
 		return activeDate;
 	}
 
@@ -111,19 +107,12 @@ public class Program {
 		this.activeDate = activeDate;
 	}
 
-	public List<Student> getStudent() {
-		return student;
+	public Set<Department> getDepartments() {
+		return departments;
 	}
 
-	public void setStudent(List<Student> student) {
-		this.student = student;
+	public void setDepartments(Set<Department> departments) {
+		this.departments = departments;
 	}
-
-	public List<AccademicYear> getAccademicYears() {
-		return accademicYears;
-	}
-
-	public void setAccademicYears(List<AccademicYear> accademicYears) {
-		this.accademicYears = accademicYears;
-	}
+	
 }

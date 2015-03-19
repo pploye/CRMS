@@ -1,23 +1,12 @@
-
 package com.aurora.crms.domain;
 
 import java.util.Date;
-import java.util.List;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-
-
 
 @Entity(name = "Course")
 public class Course {
@@ -51,24 +40,6 @@ public class Course {
     @Column(name = "Activate_Date")
     private Date activeDate;
 
-	@Future
-	private Date startDate;
-
-	@Future
-	private Date endDate;
-
-	@ManyToMany
-	@JoinTable(name = "STUDENT_COURSE", joinColumns = { @JoinColumn(name = "STUDENT_ID") }, inverseJoinColumns = { @JoinColumn(name = "COURSE_ID") })
-	private List<Course> courses;
-
-	@ManyToMany
-	@JoinTable(name = "COURSE_PROGRAM", joinColumns = { @JoinColumn(name = "COURSE_ID") }, inverseJoinColumns = { @JoinColumn(name = "PROGRAM_ID") })
-	private Set<Program> programs;
-
-	@ManyToMany
-	@JoinTable(name = "COURSE_PROFESSOR", joinColumns = { @JoinColumn(name = "COURSE_ID") }, inverseJoinColumns = { @JoinColumn(name = "PROFESSOR_ID") })
-	private List<Professor> professors;
-
 	public String getCourseId() {
 		return courseId;
 	}
@@ -101,11 +72,11 @@ public class Course {
 		this.courseDescription = courseDescription;
 	}
 
-	public boolean isTrashed() {
+	public boolean getIsTrashed() {
 		return isTrashed;
 	}
 
-	public void setTrashed(boolean isTrashed) {
+	public void setIsTrashed(boolean isTrashed) {
 		this.isTrashed = isTrashed;
 	}
 
@@ -117,11 +88,11 @@ public class Course {
 		this.trashedDate = trashedDate;
 	}
 
-	public boolean isActive() {
+	public boolean getIsActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 
@@ -131,46 +102,6 @@ public class Course {
 
 	public void setActiveDate(Date activeDate) {
 		this.activeDate = activeDate;
-	}
-
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	public List<Course> getCourses() {
-		return courses;
-	}
-
-	public void setCourses(List<Course> courses) {
-		this.courses = courses;
-	}
-
-	public Set<Program> getPrograms() {
-		return programs;
-	}
-
-	public void setPrograms(Set<Program> programs) {
-		this.programs = programs;
-	}
-
-	public List<Professor> getProfessors() {
-		return professors;
-	}
-
-	public void setProfessors(List<Professor> professors) {
-		this.professors = professors;
 	}
 }
 

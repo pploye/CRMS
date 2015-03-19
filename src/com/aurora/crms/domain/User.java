@@ -1,7 +1,6 @@
 package com.aurora.crms.domain;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,16 +16,8 @@ public class User {
 	@Column(name = "Password")
 	private String password;
 	
-	@Column(name = "Description")
-    private String description;
-	
 	@Column(name = "Registration_Date")
 	private Date registrationDate;
-	
-	@Column(name = "Institution_Code")
-	private List<Institution> institution;
-	@Column(name = "User_Code")
-    private String userCode;
 	
 	@Column(name ="Is_Trashed")
 	private boolean isTrahed;
@@ -56,14 +47,6 @@ public class User {
 		this.password = password;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public Date getRegistrationDate() {
 		return registrationDate;
 	}
@@ -72,27 +55,11 @@ public class User {
 		this.registrationDate = registrationDate;
 	}
 
-	public List<Institution> getInstitution() {
-		return institution;
-	}
-
-	public void setInstitution(List<Institution> institution) {
-		this.institution = institution;
-	}
-
-	public String getUserCode() {
-		return userCode;
-	}
-
-	public void setUserCode(String userCode) {
-		this.userCode = userCode;
-	}
-
-	public boolean isTrahed() {
+	public boolean getIsTrahed() {
 		return isTrahed;
 	}
 
-	public void setTrahed(boolean isTrahed) {
+	public void setIsTrahed(boolean isTrahed) {
 		this.isTrahed = isTrahed;
 	}
 
@@ -104,11 +71,11 @@ public class User {
 		this.trashedDate = trashedDate;
 	}
 
-	public boolean isActive() {
+	public boolean getIsActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 

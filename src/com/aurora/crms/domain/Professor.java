@@ -1,14 +1,17 @@
 package com.aurora.crms.domain;
 
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
@@ -16,41 +19,31 @@ import javax.validation.constraints.Size;
 @Entity(name = "Professor")
 public class Professor {
 	
-	@Id
-	@NotNull
-	@Column(name="Professor_Code")
+	@Id @NotNull @Column(name="Professor_Code")
 	private String professorCode;
 	
-	@Column(name="First_Name")
-	@Size(min=3, max=30) 
+	@Column(name="First_Name") @Size(min=3, max=30) 
 	private String firstName;
 	
-	@Size(min=3, max=30) 
-	@Column(name= "Last_Name")
+	@Size(min=3, max=30) @Column(name= "Last_Name")
 	private String lastName;
 	
-	
-	@Size(min=1)
-	@Column(name ="Gender")
+	@Size(min=1) @Column(name ="Gender")
 	private String gender;
 	
 	@Column(name="Date_Of_Birth")
 	private Date dateOfBirth;
 	
-	@Null
-	@Column(name = "Title")
+	@Null @Column(name = "Title")
 	private String title;
 	
-	@Null
-	@Size(min=3, max=100) 
-	@Column(name = "Education_Level")
+	@Null @Size(min=3, max=100) @Column(name = "Education_Level")
 	private String educationLevel;
 	
 	@Column(name ="Is_Trashed")
 	private boolean isTrashed;
 	
-	@NotNull
-	@Column(name ="Trashed_Date")
+	@NotNull @Column(name ="Trashed_Date")
 	private Date trashedDate;
 	
 	@Column(name = "Is_Active")
@@ -58,14 +51,18 @@ public class Professor {
 	
 	@Column(name ="Active_Date")
 	private Date activeDate;
-	
-	@ManyToOne 
-	@JoinColumn(name="DEPT_ID")
-	private Department department;
 
-	@ManyToMany
-	@JoinTable(name = "PROFESSOR_ADDRESS", joinColumns = { @JoinColumn(name = "PROFESSOR_ID") }, inverseJoinColumns = { @JoinColumn(name = "ADDRESS_ID") })
-	private Address address;
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "Professor_Address", joinColumns = { @JoinColumn(name = "Professor_Code") }, inverseJoinColumns = { @JoinColumn(name = "Address_Code")})
+	private Set<Address> address;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "Professor_Course", joinColumns = { @JoinColumn(name = "Professor_Code") }, inverseJoinColumns = { @JoinColumn(name = "Course_Code")})
+	private Set<Course> courses;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "User_Name")
+	private User user;
 
 	public String getProfessorCode() {
 		return professorCode;
@@ -123,7 +120,7 @@ public class Professor {
 		this.educationLevel = educationLevel;
 	}
 
-	public boolean isTrashed() {
+	public boolean getIsTrashed() {
 		return isTrashed;
 	}
 
@@ -139,11 +136,11 @@ public class Professor {
 		this.trashedDate = trashedDate;
 	}
 
-	public boolean isActive() {
+	public boolean getIsActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
 
@@ -155,19 +152,28 @@ public class Professor {
 		this.activeDate = activeDate;
 	}
 
-	public Department getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-
-	public Address getAddress() {
+	public Set<Address> getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(Set<Address> address) {
 		this.address = address;
 	}
+
+	public Set<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
 }

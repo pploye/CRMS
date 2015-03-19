@@ -19,4 +19,15 @@
     <servlet-name>crms</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
+  <!-- ServletContext parameter - Scope is this [root] application -->
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>/WEB-INF/configuration/applicationContext.xml</param-value>
+  </context-param>
+  
+  <!-- The security-context is loaded into the root WebApplicationContext as it is NOT Spring MVC specific [DispatcherServlet] -->
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
 </web-app>

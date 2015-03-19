@@ -2,6 +2,7 @@ package com.aurora.crms.controller;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,11 +10,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 import com.aurora.crms.domain.Professor;
+import com.aurora.crms.service.IProfessor;
 @Controller
 @RequestMapping("/professor")
 public class ProfessorController {
+	
+	@Autowired
+	IProfessor professorService;
+	
 	@RequestMapping(value = {"/","/add" }, method = RequestMethod.GET)
 	public String addProfessor(@ModelAttribute Professor professor	) {
 		return "addProfessorTile"; // This should match the tile definition name

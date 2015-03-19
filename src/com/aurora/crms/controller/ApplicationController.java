@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes({"User","University"})
+@SessionAttributes({ "User", "University" })
 public class ApplicationController {
-	
+
 	@RequestMapping("/")
-	public String init(){
+	public String init() {
 		return "Welcome";
 	}
-	
-	@RequestMapping(value = {"/template"}, method = RequestMethod.GET)
-	public String template(){
+
+	@RequestMapping(value = { "/template" }, method = RequestMethod.GET)
+	public String template() {
 		return "template";
 	}
-	
+
 }

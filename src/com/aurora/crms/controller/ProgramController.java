@@ -16,6 +16,7 @@ import com.aurora.crms.service.IProgram;
 @Controller
 @RequestMapping("/program")
 public class ProgramController {
+	
 	@Autowired
 	IProgram program;
 	
@@ -30,8 +31,7 @@ public class ProgramController {
 		if(result.hasErrors()){
 			return "addProgram";
 		}
-		
-	this.program.saveProgram(NewProgram);
+		this.program.saveProgram(NewProgram);
 		return "redirect : /ProgramDetail";
 	}
 

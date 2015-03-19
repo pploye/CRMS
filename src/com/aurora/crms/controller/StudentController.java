@@ -18,7 +18,8 @@ import com.aurora.crms.service.IStudent;
 @RequestMapping("/student")
 public class StudentController {
 	
-	@Autowired IStudent studentservice;
+	@Autowired
+	IStudent studentservice;
 
 	@RequestMapping(value = {"/","/profile" }, method = RequestMethod.GET)
 	public String displayProfile(@ModelAttribute Student student) {

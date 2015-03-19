@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
         
-    <context:component-scan base-package="com.aurora.crms"/>
+    <context:component-scan base-package="com.aurora.crms.controller"/>
     
     <!-- This will enable MVC based annotation for the application  -->
     <mvc:annotation-driven/>

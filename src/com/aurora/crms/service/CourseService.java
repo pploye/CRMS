@@ -9,7 +9,7 @@ import com.aurora.crms.domain.Course;
 
 @Service
 @Transactional
-public class CourseService implements ICourseService {
+public class CourseService implements ICourse {
 
 	@Override
 	public boolean addCourse(Course course) {
@@ -38,7 +38,7 @@ public class CourseService implements ICourseService {
 	@Override
 	public void getAllCourses() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

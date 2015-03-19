@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.aurora.crms.domain.Student;
-import com.aurora.crms.service.IStudentService;
+import com.aurora.crms.service.IStudent;
 
 @Controller
 @RequestMapping("/student")
 public class StudentController {
 	
-	@Autowired IStudentService studentservice;
+	@Autowired IStudent studentservice;
 
 	@RequestMapping(value = {"/","/profile" }, method = RequestMethod.GET)
 	public String displayProfile(@ModelAttribute Student student) {

@@ -2,9 +2,14 @@ package com.aurora.crms.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.aurora.crms.domain.Professor;
 
-public class ProfessorService implements IProfessorService{
+@Service
+@Transactional
+public class ProfessorService implements IProfessor{
 
 	@Override
 	public boolean addListOfProfessors(List<Professor> professors) {

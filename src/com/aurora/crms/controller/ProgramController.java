@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.aurora.crms.domain.Program;
-import com.aurora.crms.service.IProgramService;
+import com.aurora.crms.service.IProgram;
 
 @Controller
 @RequestMapping("/program")
 public class ProgramController {
 	@Autowired
-	IProgramService programService;
+	IProgram program;
 	
 	@RequestMapping(value = {"/","/addProgram"} , method = RequestMethod.GET)
 	public String getProgramForm(@ModelAttribute("newProgram") Program NewProgram, Model model){
@@ -31,7 +31,7 @@ public class ProgramController {
 			return "addProgram";
 		}
 		
-	this.programService.saveProgram(NewProgram);
+	this.program.saveProgram(NewProgram);
 		return "redirect : /ProgramDetail";
 	}
 

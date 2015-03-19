@@ -1,7 +1,3 @@
-CREATE DATABASE IF NOT EXISTS `crmstest`;
-
-USE `crmstest`;
-
 CREATE TABLE IF NOT EXISTS `User_Role`(
 	`User_Role_Code` VARCHAR(50) NOT NULL,
     `Role_Name` VARCHAR(50) NOT NULL,

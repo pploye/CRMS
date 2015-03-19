@@ -3,6 +3,7 @@ package com.aurora.crms.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.aurora.crms.domain.Course;
 import com.aurora.crms.domain.Department;
@@ -10,7 +11,8 @@ import com.aurora.crms.domain.Program;
 import com.aurora.crms.domain.Student;
 
 @Service
-public class StudentService implements IStudentService {
+@Transactional
+public class StudentService implements IStudent {
 
 	@Override
 	public boolean updateProfile(Student student) {
